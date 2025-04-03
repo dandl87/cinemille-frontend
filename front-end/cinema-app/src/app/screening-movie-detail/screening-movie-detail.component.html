@@ -1,0 +1,14 @@
+@if (movie()) {
+    <p>
+    <strong>{{movie()!.title}}</strong>
+    </p>
+    <div>
+        <h5>directed by {{movie()!.director}}, in {{movie()!.year }}, the movie has a duration of {{movie()!.duration}} minutes</h5>
+        <h4>The movie is screening  in our {{movie()!.room}} room</h4>
+        @if(movie()!.seatsAvailable>0 ){
+            <h3>There are currently {{movie()!.seatsAvailable}} tickets available</h3>
+        }@else{
+            Unfortunately there are no tickets available
+        }
+    </div>
+    }

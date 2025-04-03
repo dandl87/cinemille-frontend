@@ -1,0 +1,22 @@
+ 
+<div>
+
+    @if(movieSignal()){
+    <table>
+        <tr>
+            <th>Movie</th>
+            <th>Room</th> 
+        </tr>
+        @for (movie of movieSignal(); track movie.id) {
+            <tr style="padding: 10px;">
+                <td (click)="selectedMovie = movie">{{movie.title}}</td>
+                <td> {{movie.room}}</td>
+            </tr> 
+        }@empty {
+            <p>No movie found!</p>
+        }
+    </table>
+    <div class="box">
+        <screening-movie-detail [movie]="selectedMovie"></screening-movie-detail>
+    </div> 
+}

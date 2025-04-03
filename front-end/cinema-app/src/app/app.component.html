@@ -1,0 +1,20 @@
+<header>
+  <h2>{{ settings.title }} </h2>
+  <span class="spacer"></span>
+  <div class="menu-links">
+    <a routerLink="/user">User Page</a>
+    <br>
+    <a routerLink="/admin">Admin Page</a>
+  </div>
+</header>
+<main class="main">
+  <div class="content">
+    <router-outlet />
+ 
+    <div class="content">
+    </div>
+  </div>
+</main>
+  
+
+<router-outlet />

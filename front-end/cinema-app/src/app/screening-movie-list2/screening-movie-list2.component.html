@@ -1,0 +1,36 @@
+<div>
+    <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
+        <div>
+        <label for="day">Insert a date</label>
+        <input type="date" id="day" formControlName="dayField" />
+        <br />
+        <div>
+            <button type="submit">search</button>
+        </div>
+        </div>
+    </form> 
+</div>
+<br />
+<div>
+
+    @if(movieSignal()){
+ 
+    <table>
+        <tr>
+            <th>Movie</th>
+            <th>Room</th> 
+        </tr>
+        
+        @for (movie of movieSignal() | sort; track movie.id) {
+            <tr style="padding: 10px;">
+                <td (click)="selectedMovie = movie">{{movie.title}}</td>
+                <td> {{movie.room}}</td>
+            </tr> 
+        }@empty {
+            <p>No movie found!</p>
+        }
+    </table>
+    <div class="box">
+        <screening-movie-detail [movie]="selectedMovie"></screening-movie-detail>
+    </div> 
+}
