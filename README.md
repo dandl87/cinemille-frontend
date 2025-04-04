@@ -3,7 +3,11 @@
 ### startup
 ## execute the following angular command in front-end/cinema-app folder
 
-npm install
+
+npm install  
+
+
+
 ng serve
 
 ## reached at 
